@@ -1,13 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, Image, ImageBackground, View } from 'react-native';
+import 'react-native-gesture-handler';
 import Card from './components/MateCard';
 import mates from './assets/data/mates';
-
-const brinks = {
-  name: 'Brinks',
-  image: 'https://frenchiejourney.com/wp-content/uploads/2020/09/Merle-French-Bulldog.jpg',
-  bio: 'Ready to mate!',
-}
 
 export default function App() {
   return (
