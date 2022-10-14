@@ -7,7 +7,7 @@ import MatchesScreen from './src/screens/MatchesScreen';
 export default function App() {
   return (
     <View style={styles.container}>
-      <HomeScreen />
+      <MatchesScreen />
     </View>
   );
 }
