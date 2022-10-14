@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Image, ImageBackground, View } from 'react-native';
+import { StyleSheet, Text, ImageBackground, View } from 'react-native';
 
 const card = (props) => {
   const {name, image, bio, pet, breed, age, ready} = props.user;
