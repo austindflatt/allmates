@@ -1,4 +1,5 @@
 import { StyleSheet, Text, ImageBackground, View } from 'react-native';
+import LinearGradient from "react-native-linear-gradient"
 
 const card = (props) => {
   const {name, image, bio, pet, breed, age, ready} = props.user;
@@ -10,13 +11,18 @@ const card = (props) => {
         }}
         style={styles.image}
       >
-        <View style={styles.cardInner}>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.miles}>52 miles away</Text>
-          <Text style={styles.breed}>{breed}</Text>
-          <Text style={styles.age}>{age} years old</Text>
-          <Text style={styles.ready}>{ready ? 'Ready to breed' : 'Not ready to breed'}</Text>
-        </View>
+        <LinearGradient 
+          colors={['#00000000', '#000000']} 
+          style={{width : '100%'}}
+        >
+          <View style={styles.cardInner}>
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.miles}>52 miles away</Text>
+            <Text style={styles.breed}>{breed}</Text>
+            <Text style={styles.age}>{age} years old</Text>
+            <Text style={styles.ready}>{ready ? 'Ready to breed' : 'Not ready to breed'}</Text>    
+          </View>
+        </LinearGradient>
       </ImageBackground>
     </View>
   )
@@ -46,7 +52,6 @@ const styles = StyleSheet.create({
   },
   cardInner: {
     padding: 10,
-    backgroundColor: 'red',
   },
   name: {
     fontSize: 30,
