@@ -1,7 +1,7 @@
 import { StyleSheet, Text, Image, ImageBackground, View } from 'react-native';
 
 const card = (props) => {
-  const {name, image, bio} = props.user;
+  const {name, image, bio, pet, breed, age, ready} = props.user;
 	return (
     <View style={styles.card}>
       <ImageBackground
@@ -12,7 +12,10 @@ const card = (props) => {
       >
         <View style={styles.cardInner}>
           <Text style={styles.name}>{name}</Text>
-          <Text style={styles.bio}>{bio}</Text>
+          <Text style={styles.miles}>52 miles away</Text>
+          <Text style={styles.breed}>{breed}</Text>
+          <Text style={styles.age}>{age} years old</Text>
+          <Text style={styles.ready}>{ready ? 'Ready to breed' : 'Not ready to breed'}</Text>
         </View>
       </ImageBackground>
     </View>
@@ -21,9 +24,10 @@ const card = (props) => {
 
 const styles = StyleSheet.create({
   card: {
-    width: '95%',
-    height: '70%',
+    width: '100%',
+    height: '100%',
     borderRadius: 10,
+    backgroundColor: '#fefefe',
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
@@ -42,13 +46,29 @@ const styles = StyleSheet.create({
   },
   cardInner: {
     padding: 10,
+    backgroundColor: 'red',
   },
   name: {
     fontSize: 30,
     fontWeight: 'bold',
-    color: '#FFF'
+    color: '#FFF',
   },
-  bio: {
+  miles: {
+    fontSize: 18,
+    color: '#FFF',
+    lineHeight: 24,
+  },
+  breed: {
+    fontSize: 18,
+    color: '#FFF',
+    lineHeight: 24,
+  },
+  age: {
+    fontSize: 18,
+    color: '#FFF',
+    lineHeight: 24,
+  },
+  ready: {
     fontSize: 18,
     color: '#FFF',
     lineHeight: 24,

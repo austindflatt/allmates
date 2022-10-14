@@ -1,13 +1,29 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, Image, ImageBackground, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
 import 'react-native-gesture-handler';
 import Card from './components/MateCard';
 import mates from './assets/data/mates';
+import AnimatedStack from './components/AnimatedStack';
+
 
 export default function App() {
+
+  const onSwipeLeft = (user) => {
+    console.warn('swipe left', user.name);
+  };
+
+  const onSwipeRight = (user) => {
+    console.warn('swipe right', user.name);
+  };
+
   return (
     <View style={styles.container}>
-      <Card user={mates[1]} />
+      <AnimatedStack 
+        data={mates}
+        renderItem={(({ item }) => <Card user={item} />)}
+        onSwipeLeft={onSwipeLeft}
+        onSwipeRight={onSwipeRight}
+      />
     </View>
   );
 }
